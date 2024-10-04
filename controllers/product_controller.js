@@ -42,7 +42,7 @@ export const getDiscountedProducts = (req, res) => {
 
 export const getProductById = (req, res) => {
     try {
-        res.status(200).send(`Displayed Product with id: ${req.params.id}`);
+        res.status(200).send(`Displayed Product with id: ${req.params.productId}`);
     } catch (error) {
         // Handle error
     }
@@ -52,7 +52,7 @@ export const updateProduct = (req, res) => {
     try {
         // Find product in database using the product id
         // Patch or Put Product
-        res.status(200).send(`Product with id: ${req.params.id} updated`);
+        res.status(200).send(`Product with id: ${req.params.productId} updated`);
     } catch (error) {
         // Handle error
     }
