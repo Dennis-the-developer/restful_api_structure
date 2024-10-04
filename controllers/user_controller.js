@@ -3,7 +3,7 @@
 export const signup = (req, res) => {
   try {
     // Signup logic
-    res.status(201).send("SignUp ");
+    res.status(201).send("SignUp successfully");
   } catch (error) {
     // Handle error
   }
