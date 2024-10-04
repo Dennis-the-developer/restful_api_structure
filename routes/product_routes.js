@@ -3,10 +3,10 @@ import { addProducts, deleteProduct, getProductById, getProducts, updateProduct 
 
 const productRouter = Router();
 
-productRouter.post("/product", addProducts);
-productRouter.get("/product/:id", getProductById);
-productRouter.get("/product", getProducts);
-productRouter.patch("/product/:id", updateProduct);
-productRouter.delete("/product/:id", deleteProduct);
+productRouter.post("users/:userId/products", addProducts);
+productRouter.get("/products/:productId", getProductById);
+productRouter.get("/products", getProducts);
+productRouter.patch("users/:userId/products/:productId", updateProduct);
+productRouter.delete("users/:userId/products/:productId", deleteProduct);
 
 export default productRouter;

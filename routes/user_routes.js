@@ -3,8 +3,8 @@ import { login, logout, signup } from "../controllers/user_controller.js";
 
 const userRouter = Router();
 
-userRouter.post("/user/signup", signup);
-userRouter.post("user/login", login);
-userRouter.post("/user/logout", logout);
+userRouter.post("/users/signup", signup);
+userRouter.post("users/login", login);
+userRouter.post("/users/logout", logout);
 
 export default userRouter;

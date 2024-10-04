@@ -4,10 +4,10 @@ import { deleteOrder, makeOrder, updateOrder, viewOrder, viewOrders } from "../c
 
 const orderRouter = Router();
 
-orderRouter.post("/order", makeOrder);
-orderRouter.get("/order/:id", viewOrder);
-orderRouter.get("/order", viewOrders);
-orderRouter.patch("/order/:id", updateOrder);
-orderRouter.delete("/order/:id", deleteOrder);
+orderRouter.post("users/:userId/products/:productId/orders", makeOrder);
+orderRouter.get("users/:userId/orders/:orderId", viewOrder);
+orderRouter.get("users/:userId/orders", viewOrders);
+orderRouter.patch("users/:userId/orders/:orderId", updateOrder);
+orderRouter.delete("users/:userId/orders/:orderId", deleteOrder);
 
 export default orderRouter;
