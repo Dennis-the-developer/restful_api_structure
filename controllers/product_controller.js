@@ -11,7 +11,30 @@ export const addProducts = (req, res) => {
 
 export const getProducts = (req, res) => {
     try {
-        res.status(200).send("All Products");
+        res.status(200).send("Display products");
+    } catch (error) {
+        // Handle error
+    }
+}
+
+export const getDiscountedProducts = (req, res) => {
+    try {
+        const {limit, offset, sort, order, oldPrice, discountedPrice} = req.query;
+        // For Pagination
+        limit = parseInt(limit) || 50;
+        offset = parseInt(offset) || 10;
+
+        // For Filtering
+        oldPrice = oldPrice || 0;
+        discountedPrice = discountedPrice || 0;
+
+        // For Sorting
+        sort = sort || "name";
+        order = order || "asc";
+
+        // Query the database using the provided queries to extract the requested data from the db.
+
+        res.status(200).send("Display discounted products");
     } catch (error) {
         // Handle error
     }
