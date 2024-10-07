@@ -6,6 +6,8 @@ import expressOasGenerator from '@mickeymond/express-oas-generator';
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+
 const port = 8080;
 
 // ExpressOasGenerator ResponseHandler

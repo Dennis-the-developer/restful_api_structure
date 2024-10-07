@@ -1,10 +1,10 @@
 // import model(s)
 
-export const signup = (req, res) => {
+export const signup = (req, res, next) => {
   try {
     // Signup logic
     const { email, password } = req.body;
-    if(!email || !password) {
+    if (!email || !password) {
       return res.status(400).send("Email and password are required");
     }
     res.status(201).send("SignUp successfully");
@@ -13,10 +13,11 @@ export const signup = (req, res) => {
   }
 };
 
-export const login = (req, res) => {
+export const login = (req, res, next) => {
   try {
     // Login logic
-    if(!email || !password) {
+    const { email, password } = req.body;
+    if (!email || !password) {
       return res.status(400).send("Email and password are required");
     }
 
@@ -30,13 +31,11 @@ export const login = (req, res) => {
   }
 };
 
-export const logout = (req, res) => {
+export const logout = (req, res, next) => {
   try {
     // Check if user is logged in
-    if (user) {
-      // log user out
-      res.status(200).send("Logout successful");
-    }
+    // log user out
+    res.status(200).send("Logout successful");
   } catch (error) {
     next(error);
   }

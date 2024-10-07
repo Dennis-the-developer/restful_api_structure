@@ -1,6 +1,6 @@
 // import models
 
-export const addProducts = (req, res) => {
+export const addProducts = (req, res, next) => {
     try {
         // Validate and retrieve product details from request
         res.status(201).send("Product added"); 
@@ -9,7 +9,7 @@ export const addProducts = (req, res) => {
     }
 }
 
-export const getProducts = (req, res) => {
+export const getProducts = (req, res, next) => {
     try {
         res.status(200).send("Display products");
     } catch (error) {
@@ -17,7 +17,7 @@ export const getProducts = (req, res) => {
     }
 }
 
-export const getDiscountedProducts = (req, res) => {
+export const getDiscountedProducts = (req, res, next) => {
     try {
         const {limit, offset, sort, order, oldPrice, discountedPrice} = req.query;
         // For Pagination
@@ -40,7 +40,7 @@ export const getDiscountedProducts = (req, res) => {
     }
 }
 
-export const getProductById = (req, res) => {
+export const getProductById = (req, res, next) => {
     try {
         res.status(200).send(`Displayed Product with id: ${req.params.productId}`);
     } catch (error) {
@@ -48,7 +48,7 @@ export const getProductById = (req, res) => {
     }
 }
 
-export const updateProduct = (req, res) => {
+export const updateProduct = (req, res, next) => {
     try {
         // Find product in database using the product id
         // Patch or Put Product
@@ -58,7 +58,7 @@ export const updateProduct = (req, res) => {
     }
 }
 
-export const deleteProduct = (req, res) => {
+export const deleteProduct = (req, res, next) => {
     try {
         // Find product in database using the product id
         // Remove product from db
