@@ -5,7 +5,7 @@ export const makeOrder = (req, res) => {
         // Validate and retrieve order details from request
         res.status(201).send("Order maded successfully"); 
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -13,7 +13,7 @@ export const viewOrder = (req, res) => {
     try {
         res.status(200).send(`Display order with id: ${req.params.id}`);
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -21,7 +21,7 @@ export const viewOrders = (req, res) => {
     try {
         res.status(200).send("Display orders");
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -31,7 +31,7 @@ export const updateOrder = (req, res) => {
         // Update order record
         res.status(200).send(`Order with id: ${req.params.id} updated successfully`);
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -41,6 +41,6 @@ export const deleteOrder = (req, res) => {
         //  Delete order
         res.status(200).send("Order deleted successfully");
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }

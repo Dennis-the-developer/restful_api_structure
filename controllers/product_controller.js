@@ -5,7 +5,7 @@ export const addProducts = (req, res) => {
         // Validate and retrieve product details from request
         res.status(201).send("Product added"); 
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -13,7 +13,7 @@ export const getProducts = (req, res) => {
     try {
         res.status(200).send("Display products");
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -36,7 +36,7 @@ export const getDiscountedProducts = (req, res) => {
 
         res.status(200).send("Display discounted products");
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -44,7 +44,7 @@ export const getProductById = (req, res) => {
     try {
         res.status(200).send(`Displayed Product with id: ${req.params.productId}`);
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -54,7 +54,7 @@ export const updateProduct = (req, res) => {
         // Patch or Put Product
         res.status(200).send(`Product with id: ${req.params.productId} updated`);
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
 
@@ -64,6 +64,6 @@ export const deleteProduct = (req, res) => {
         // Remove product from db
         res.status(200).send("Product deleted");
     } catch (error) {
-        // Handle error
+        next(error);
     }
 }
